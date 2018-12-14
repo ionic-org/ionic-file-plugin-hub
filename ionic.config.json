@@ -1,5 +1,7 @@
 {
   "name": "ionic-file-plugin-hub",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
