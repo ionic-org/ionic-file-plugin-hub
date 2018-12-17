@@ -1,0 +1,19 @@
+[
+  {
+    "name": "Ios File Picker",
+    "ionic": "https://ionicframework.com/docs/native/ios-file-picker/",
+    "author": "cyph",
+    "platforms": [
+      "iOS"
+    ],
+    "function": {
+      "file": [
+        "选择文件"
+      ],
+      "image": null,
+      "video": null,
+      "audio": null
+    },
+    "mark": []
+  }
+]

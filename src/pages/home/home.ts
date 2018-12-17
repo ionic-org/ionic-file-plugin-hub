@@ -40,7 +40,7 @@ export class HomePage {
   clickPlugin(index) {
     let plugin = this.list[index];
     let pluginName = plugin.name;
-    let page = pluginName.replace(/\s/,"") + "Page";
+    let page = pluginName.replace(/\s/g,"") + "Page";
     this.navCtrl.push(page);
   }
 }

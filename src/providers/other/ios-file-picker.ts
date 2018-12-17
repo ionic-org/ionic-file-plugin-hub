@@ -1,17 +1,19 @@
-import { HttpClient } from '@angular/common/http';
+import { IOSFilePicker } from '@ionic-native/file-picker';
 import { Injectable } from '@angular/core';
 
-/*
-  Generated class for the IosFilePickerProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class IosFilePickerProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello IosFilePickerProvider Provider');
+  constructor(public filePicker: IOSFilePicker) {
+  }
+
+  pickFile() {
+    console.log("pickFile start:");
+    this.filePicker.pickFile().then(uri => {
+      console.log(uri)
+    }).catch(err => {
+      console.log('Error', err)
+    });
   }
 
 }

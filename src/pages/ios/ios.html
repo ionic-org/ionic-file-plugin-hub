@@ -6,6 +6,79 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
+  <ion-list>
+    <ion-item class="plugin-item" *ngFor="let plugin of list;let i = index" no-padding (click)="clickPlugin(i)">
+      <h1 class="plugin-name">{{plugin.name}}</h1>
+      <ion-list class="info-list" no-lines>
 
+        <ion-item class="info-item black-line-bottom" no-padding>
+          <div class="info-item-start" item-start>作者:</div>
+          <div text-wrap class="info-item-content">{{plugin.author}}</div>
+        </ion-item>
+
+        <ion-item class="info-item black-line-bottom" no-padding>
+          <div class="info-item-start" item-start>链接:</div>
+          <div text-wrap class="info-item-content">{{plugin.ionic}}</div>
+        </ion-item>
+
+        <ion-item class="info-item black-line-bottom" no-padding>
+          <div class="info-item-start" item-start>平台:</div>
+          <div class="info-item-content">
+            <ion-icon class="platform-icon" *ngFor="let platform of plugin.platforms" name="logo-apple" item-start></ion-icon>
+          </div>
+        </ion-item>
+
+        <ion-item class="info-item black-line-bottom" no-padding>
+          <div class="info-item-start" item-start>功能:</div>
+          <ion-item text-wrap class="info-item-content">
+
+            <ion-item class="info-item red-line-bottom" no-padding *ngIf="plugin.function.file">
+              <ion-icon name="document" item-start></ion-icon>
+              <div *ngFor="let fun of plugin.function.file;let i = index">
+                <span>{{i+1}}.</span>
+                <span>{{fun}}</span>
+              </div>
+            </ion-item>
+
+            <ion-item class="info-item red-line-bottom" no-padding *ngIf="plugin.function.image">
+              <ion-icon name="image" item-start></ion-icon>
+              <div *ngFor="let fun of plugin.function.image;let i = index">
+                <span>{{i+1}}.</span>
+                <span>{{fun}}</span>
+              </div>
+            </ion-item>
+
+            <ion-item class="info-item red-line-bottom" no-padding *ngIf="plugin.function.video">
+              <ion-icon name="videocam" item-start></ion-icon>
+              <div *ngFor="let fun of plugin.function.video;let i = index">
+                <span>{{i+1}}.</span>
+                <span>{{fun}}</span>
+              </div>
+            </ion-item>
+
+            <ion-item class="info-item red-line-bottom" no-padding *ngIf="plugin.function.audio">
+              <ion-icon name="mic" item-start></ion-icon>
+              <div class="green-line-bottom" *ngFor="let fun of plugin.function.audio;let i = index">
+                <span>{{i+1}}.</span>
+                <span>{{fun}}</span>
+              </div>
+            </ion-item>
+
+          </ion-item>
+        </ion-item>
+
+        <ion-item class="info-item" no-padding>
+          <div class="info-item-start" item-start>备注:</div>
+          <div text-wrap class="info-item-content">
+            <div *ngFor="let tip of plugin.mark;let i = index">
+              <span>{{i+1}}.</span>
+              <span>{{tip}}</span>
+            </div>
+          </div>
+        </ion-item>
+
+      </ion-list>
+    </ion-item>
+  </ion-list>
 </ion-content>
