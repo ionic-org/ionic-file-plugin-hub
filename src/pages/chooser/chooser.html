@@ -14,10 +14,13 @@
 
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of list;let i = index" (click)="clickItem(i)">
-      <ion-label item-start>{{item.key}}</ion-label>
-      <ion-label>{{item.value}}</ion-label>
-    </ion-item>
-  </ion-list>
+  <ion-grid>
+    <ion-row *ngFor="let item of list;let i = index" (click)="clickItem(i)">
+      <ion-col col-2>{{item.key}}</ion-col>
+      <ion-col col-9 text-nowrap style="overflow: hidden;">{{item.value}}</ion-col>
+      <ion-col col-1 text-center>
+        <ion-icon name="arrow-forward"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

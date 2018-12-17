@@ -27,7 +27,7 @@ export class ChooserPage {
   }
 
   ionViewDidLoad() {
-
+    this.requestForMIME();
   }
 
   requestForMIME() {
@@ -46,6 +46,7 @@ export class ChooserPage {
 
   clickItem(index) {
     let item = this.list[index];
+
     this.chooserProvider.getFile(item.value);
   }
 

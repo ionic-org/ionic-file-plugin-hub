@@ -9,6 +9,7 @@ export class ChooserProvider {
   }
 
   getFile(accept) {
+    console.log("chooser getFile:",accept);
     this.chooser.getFile(accept).then((data: ChooserResult) => {
       console.log(JSON.stringify(data));
     }, err => {

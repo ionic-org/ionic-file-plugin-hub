@@ -3,7 +3,7 @@ import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 export const URL_Plugin =  "assets/json/filePluginHub.json";
-export const URL_MIME = "assets/json/filePluginHub.json";
+export const URL_MIME = "assets/json/mime.json";
 
 @Injectable()
 export class JsonProvider implements OnInit{
