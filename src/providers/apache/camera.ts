@@ -1,17 +1,15 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-/*
-  Generated class for the CameraProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
+import { Camera, CameraOptions } from '@ionic-native/camera';
 @Injectable()
 export class CameraProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello CameraProvider Provider');
-  }
+  constructor(private camera:Camera) {}
 
+  getPicture(options: CameraOptions) {
+    this.camera.getPicture(options).then(data=>{
+      console.log(JSON.stringify(data));
+    },err=>{
+      console.error(err);
+    })
+  }
 }

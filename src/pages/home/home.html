@@ -6,7 +6,7 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let plugin of list;let i = index" no-padding (click)="clickPlugin(i)">
+    <ion-item class="plugin-item" *ngFor="let plugin of list;let i = index" no-padding (click)="clickPlugin(i)">
       <h1 class="plugin-name">{{plugin.name}}</h1>
       <ion-list class="info-list" no-lines>
 

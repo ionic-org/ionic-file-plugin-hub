@@ -12,6 +12,8 @@ import { GithubPage } from '../pages/github/github';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MediaCapture } from '@ionic-native/media-capture';
+import { Camera } from '@ionic-native/camera';
+import { Media } from '@ionic-native/media';
 // provider
 import { JsonProvider } from './../providers/json/json';
 // apache
@@ -73,6 +75,8 @@ import { HttpClientModule } from '@angular/common/http';
     StatusBar,
     SplashScreen,
     MediaCapture,
+    Camera,
+    Media,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     JsonProvider,
     // apache

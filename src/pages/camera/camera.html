@@ -13,6 +13,84 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+  <ion-list no-lines>
+    <ion-item>
+      <ion-label class="item-left-label" item-start>quality</ion-label>
+      <ion-range [(ngModel)]="options.quality" min="0" max="100">
+        <ion-label range-left>0</ion-label>
+        <ion-label range-right>100</ion-label>
+      </ion-range>
+    </ion-item>
 
+    <ion-item>
+      <ion-label class="item-left-label" item-start>destinationType</ion-label>
+      <ion-select [(ngModel)]="options.destinationType">
+        <ion-option value=0>DATA_URL</ion-option>
+        <ion-option value=1>FILE_URI</ion-option>
+        <ion-option value=2>NATIVE_URI</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="item-left-label" item-start>sourceType</ion-label>
+      <ion-select [(ngModel)]="options.sourceType">
+        <ion-option value=0>PHOTOLIBRARY</ion-option>
+        <ion-option value=1>CAMERA</ion-option>
+        <ion-option value=2>SAVEDPHOTOALBUM</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="item-left-label" item-start>allowEdit</ion-label>
+      <ion-toggle [(ngModel)]="options.allowEdit"></ion-toggle>
+    </ion-item>
+
+    <ion-item *ngIf="options.mediaType != 1">
+      <ion-label class="item-left-label" item-start>encodingType</ion-label>
+      <ion-select [(ngModel)]="options.encodingType">
+        <ion-option value=0>JPEG</ion-option>
+        <ion-option value=1>PNG</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="item-left-label" item-start>targetWidth</ion-label>
+      <ion-input [(ngModel)]="options.targetWidth"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="item-left-label" item-start>targetHeight</ion-label>
+      <ion-input [(ngModel)]="options.targetHeight"></ion-input>
+    </ion-item>
+
+    <ion-item *ngIf="options.sourceType != 1">
+      <ion-label class="item-left-label" item-start>mediaType</ion-label>
+      <ion-select [(ngModel)]="options.mediaType">
+        <ion-option value=0>PICTURE</ion-option>
+        <ion-option value=1>VIDEO</ion-option>
+        <ion-option value=2>ALLMEDIA</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="item-left-label" item-start>correctOrientation</ion-label>
+      <ion-toggle [(ngModel)]="options.correctOrientation"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="item-left-label" item-start>saveToPhotoAlbum</ion-label>
+      <ion-toggle [(ngModel)]="options.saveToPhotoAlbum"></ion-toggle>
+    </ion-item>
+
+    <ion-item *ngIf="options.sourceType == 1">
+      <ion-label class="item-left-label" item-start>cameraDirection</ion-label>
+      <ion-select [(ngModel)]="options.cameraDirection">
+        <ion-option value=0>BACK</ion-option>
+        <ion-option value=1>FRONT</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <button ion-button block (click)="clickGetPicture()">getPicture</button>
 </ion-content>
