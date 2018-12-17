@@ -1,17 +1,9 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-/*
-  Generated class for the AndroidVideoPlayerProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class AndroidVideoPlayerProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello AndroidVideoPlayerProvider Provider');
+  constructor() {
+
   }
 
 }

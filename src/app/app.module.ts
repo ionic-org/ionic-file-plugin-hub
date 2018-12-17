@@ -3,15 +3,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 // page
-import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
-import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { HomePage } from '../pages/home/home';
+import { IOSPage } from '../pages/ios/ios';
+import { AndroidPage } from '../pages/android/android';
+import { GithubPage } from '../pages/github/github';
 // plugin
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { MediaCapture } from '@ionic-native/media-capture';
 // provider
+import { JsonProvider } from './../providers/json/json';
 // apache
 import { FileProvider } from './../providers/apache/file';
 import { CameraProvider } from './../providers/apache/camera';
@@ -41,32 +43,38 @@ import { IosDocumentPickerProvider } from './../providers/other/ios-document-pic
 // android
 import { AndroidFileChooserProvider } from './../providers/other/android-file-chooser';
 import { AndroidVideoPlayerProvider } from './../providers/other/android-video-player';
+import { PluginHubProvider } from '../providers/plugin-hub/plugin-hub';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    TabsPage,
     HomePage,
-    TabsPage
+    IOSPage,
+    AndroidPage,
+    GithubPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    AboutPage,
-    ContactPage,
+    TabsPage,
     HomePage,
-    TabsPage
+    IOSPage,
+    AndroidPage,
+    GithubPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
     MediaCapture,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    JsonProvider,
     // apache
     FileProvider,
     CameraProvider,
@@ -95,7 +103,8 @@ import { AndroidVideoPlayerProvider } from './../providers/other/android-video-p
     IosDocumentPickerProvider,
     // android
     AndroidFileChooserProvider,
-    AndroidVideoPlayerProvider
+    AndroidVideoPlayerProvider,
+    PluginHubProvider
   ]
 })
 export class AppModule {}

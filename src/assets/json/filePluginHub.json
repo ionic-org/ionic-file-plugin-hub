@@ -1,0 +1,73 @@
+[
+  {
+    "name": "Media Capture",
+    "ionic": "https://ionicframework.com/docs/native/media-capture/",
+    "author": "apache",
+    "platforms": [
+      "iOS",
+      "Android",
+      "Browser",
+      "Windows"
+    ],
+    "function": {
+      "file":null,
+      "image":[
+        "拍照"
+      ],
+      "video":[
+        "录像"
+      ],
+      "audio":[
+        "录音"
+      ]
+    },
+    "mark": []
+  },
+  {
+    "name": "Camera",
+    "ionic": "https://ionicframework.com/docs/native/camera/",
+    "author": "apache",
+    "platforms": [
+      "iOS",
+      "Android",
+      "Browser",
+      "Windows"
+    ],
+    "function": {
+      "file": null,
+      "image": [
+        "拍照",
+        "从相册选取图片"
+      ],
+      "video": [
+        "从相册选取视频"
+      ],
+      "audio":null
+    },
+    "mark": [
+      "单次只能选取一张图片或一个视频",
+      "ios上拍照,图片为逆时针旋转90°,上传时图片是需要顺时针旋转90°处理一下"
+    ]
+  },
+  {
+    "name": "Media",
+    "ionic": "https://ionicframework.com/docs/native/meida/",
+    "author": "apache",
+    "platforms": [
+      "iOS",
+      "Android",
+      "Browser",
+      "Windows"
+    ],
+    "function": {
+      "file": null,
+      "image": null,
+      "video": null,
+      "audio": [
+        "录音",
+        "播放音频文件"
+      ]
+    },
+    "mark": []
+  }
+]
