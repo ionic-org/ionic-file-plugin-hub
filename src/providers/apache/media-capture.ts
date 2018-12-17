@@ -20,7 +20,7 @@ export class MediaCaptureProvider {
 
   sxlog(title, param) {
     if (this.platform.is("ios")) {
-      console.log(title, param);
+      console.log(title, JSON.stringify(param));
     } else {
       alert(title + JSON.stringify(param));
     }
