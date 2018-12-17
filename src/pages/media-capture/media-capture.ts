@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { MediaCaptureProvider } from '../../providers/apache/media-capture';
 
 /**
  * Generated class for the MediaCapturePage page.
@@ -15,11 +16,26 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MediaCapturePage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private media_capture:MediaCaptureProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad MediaCapturePage');
+  }
+
+  clickCaptureImage() {
+    this.media_capture.captureImage();
+  }
+
+  clickCaptureVideo() {
+    this.media_capture.captureVideo();
+  }
+
+  clickCaptureAudio() {
+    this.media_capture.captureAudio();
   }
 
 }

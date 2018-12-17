@@ -13,6 +13,20 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <ion-list no-lines no-margin>
+    <ion-item>
+      <button ion-button block (click)="clickCaptureImage()">拍照</button>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button block (click)="clickCaptureVideo()">录像</button>
+    </ion-item>
+
+    <ion-item>
+      <button ion-button block (click)="clickCaptureAudio()">录音</button>
+    </ion-item>
+  </ion-list>
 
 </ion-content>
