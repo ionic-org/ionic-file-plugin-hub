@@ -2,28 +2,24 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-export const URL =  "assets/json/filePluginHub.json";
+export const URL_Plugin =  "assets/json/filePluginHub.json";
+export const URL_MIME = "assets/json/filePluginHub.json";
 
 @Injectable()
 export class JsonProvider implements OnInit{
-
-  list: Array<FilePluginHub_I>;
-
   constructor(public http: HttpClient){
 
   }
 
   ngOnInit() {
-    console.log("JsonProvider ngOnInit")
-    this.requestForJson();
+
   }
 
-  requestForJson() {
+  requestForJson(url:string) {
     console.log("开始请求json");
     return new Observable(observer=>{
-      this.http.get(URL).subscribe((data: any) => {
+      this.http.get(url).subscribe((data: any) => {
         console.log(data);
-        this.list = data;
         observer.next(data);
       }, error => {
         console.error(error);

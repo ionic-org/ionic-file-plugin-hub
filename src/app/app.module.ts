@@ -14,6 +14,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { MediaCapture } from '@ionic-native/media-capture';
 import { Camera } from '@ionic-native/camera';
 import { Media } from '@ionic-native/media';
+import { Chooser } from '@ionic-native/chooser';
 // provider
 import { JsonProvider } from './../providers/json/json';
 // apache
@@ -77,6 +78,7 @@ import { HttpClientModule } from '@angular/common/http';
     MediaCapture,
     Camera,
     Media,
+    Chooser,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     JsonProvider,
     // apache

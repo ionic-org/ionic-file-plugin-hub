@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { JsonProvider, FilePluginHub_I } from './../../providers/json/json';
+import { JsonProvider, FilePluginHub_I, URL_Plugin } from './../../providers/json/json';
 
 @Component({
   selector: 'page-home',
@@ -32,7 +32,7 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    this.jsonProvider.requestForJson().subscribe((data: any) => {
+    this.jsonProvider.requestForJson(URL_Plugin).subscribe((data: any) => {
       this.list = data;
     })
   }

@@ -1,17 +1,19 @@
-import { HttpClient } from '@angular/common/http';
+import { Chooser, ChooserResult } from '@ionic-native/chooser';
 import { Injectable } from '@angular/core';
 
-/*
-  Generated class for the ChooserProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
 @Injectable()
 export class ChooserProvider {
 
-  constructor(public http: HttpClient) {
-    console.log('Hello ChooserProvider Provider');
+  constructor(private chooser: Chooser) {
+
+  }
+
+  getFile(accept) {
+    this.chooser.getFile(accept).then((data: ChooserResult) => {
+      console.log(JSON.stringify(data));
+    }, err => {
+      console.error(err);
+    })
   }
 
 }
